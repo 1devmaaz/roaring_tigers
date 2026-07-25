@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Roaring Tigers Shotokan Karate Club
+
+A cinematic, high-contrast marketing website for **Roaring Tigers Shotokan Karate Club** — a traditional Shotokan Karate academy based in Sheikhupura, Punjab, Pakistan.
+
+> Empowering Minds • Strengthening Bodies
+
+## Tech Stack
+
+- **[Next.js 16](https://nextjs.org/)** (App Router) + **React 19**
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** — scroll reveals & micro-interactions
+- **Embla Carousel** — gallery & testimonials sliders
+- **Lenis** — smooth scrolling
+- **React Hook Form + Zod** — validated contact form
+- **Lucide React** — icons
+- Fonts: **Bebas Neue** & **Oswald** (headings), **Inter** (body)
+
+## Sections
+
+Single-page experience with smooth-scroll anchor navigation:
+
+Hero · About (Mission / Vision / Core Values) · Programs · Benefits & Belt System · Gallery · Schedule · Pricing / Join · Testimonials · FAQ · Contact · Footer
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.tsx        # Fonts, metadata, smooth-scroll provider
+│   ├── page.tsx          # Assembles all sections
+│   └── globals.css       # Design tokens (colors, fonts, utilities)
+├── components/
+│   ├── navbar.tsx
+│   ├── footer.tsx
+│   ├── smooth-scroll.tsx # Lenis wrapper
+│   ├── reveal.tsx        # Framer Motion reveal helpers
+│   ├── section-heading.tsx
+│   ├── ui/button.tsx
+│   └── sections/         # Hero, About, Programs, Benefits, Gallery, …
+└── lib/
+    ├── site.ts           # All club content (single source of truth)
+    └── utils.ts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Content & Configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+All club data (name, contact details, programs, pricing, schedule, FAQs, etc.)
+lives in [`src/lib/site.ts`](src/lib/site.ts) so copy can be updated in one place.
 
-## Deploy on Vercel
+## Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Role        | Color        | Hex       |
+| ----------- | ------------ | --------- |
+| Primary     | Rich Black   | `#0A0A0A` |
+| Brand Red   | Tiger Red    | `#D62828` |
+| Accent      | Burnt Orange | `#C65A1E` |
+| White       | Off White    | `#F8F8F8` |
+| Surface     | Dark Gray    | `#1A1A1A` |
+| Border      | Gray         | `#3A3A3A` |
+| Achievements| Gold         | `#D4AF37` |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+
+- The contact form is wired for validation but has **no backend** — submissions
+  are simulated client-side. Connect it to an email service or API route before
+  going live.
+- Schedule times and pricing are from public listings and include a
+  "please verify" note; confirm before publishing.
+- Gallery currently uses the club banner as a placeholder across categories —
+  swap in real training/kata/kumite photography in `public/images`.
