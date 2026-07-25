@@ -15,7 +15,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: `${site.name} | Shotokan Karate in ${site.location}`,
+    absolute: site.seo.title,
   },
   description: site.seo.description,
   alternates: {

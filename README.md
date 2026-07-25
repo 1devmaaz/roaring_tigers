@@ -81,7 +81,7 @@ lives in [`src/lib/site.ts`](src/lib/site.ts) so copy can be updated in one plac
 Configured out of the box:
 
 - Full metadata (title template, description, keywords, canonical, robots)
-- Open Graph + Twitter large cards (`/images/og.png`, also served as `/opengraph-image.png`)
+- Open Graph + Twitter large card (`/images/og.jpg`, 1200×630, optimized)
 - App icons + web manifest
 - `robots.txt` + `sitemap.xml`
 - JSON-LD for LocalBusiness / SportsClub, FAQPage, WebSite, BreadcrumbList

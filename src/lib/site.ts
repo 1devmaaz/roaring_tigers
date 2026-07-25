@@ -34,10 +34,12 @@ export const site = {
     monthly: "PKR 5,000",
   },
   seo: {
+    title: "Roaring Tigers Karate | Sheikhupura",
     description:
-      "Traditional Shotokan Karate academy in Sheikhupura, Punjab, Pakistan. Professional karate classes for kids, teens, adults and women — discipline, confidence, self-defense and fitness.",
+      "Shotokan Karate classes in Sheikhupura for kids, teens, adults and women. Build discipline, confidence, fitness and practical self-defense.",
+    socialTitle: "Roaring Tigers Shotokan Karate Club",
     shortDescription:
-      "Shotokan Karate classes in Sheikhupura for kids, teens, adults and women. Discipline, confidence and self-defense.",
+      "Shotokan Karate in Sheikhupura for kids, teens, adults and women. Build discipline, confidence and self-defense.",
     keywords: [
       "Shotokan Karate Sheikhupura",
       "Karate Club Sheikhupura",

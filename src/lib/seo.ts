@@ -5,7 +5,7 @@ export const SITE_URL = getSiteUrl();
 
 export function buildMetadata(): Metadata {
   const title = {
-    default: `${site.name} | Shotokan Karate in ${site.location}`,
+    default: site.seo.title,
     template: `%s | ${site.shortName}`,
   };
 
@@ -38,25 +38,25 @@ export function buildMetadata(): Metadata {
       locale: site.seo.locale,
       url: SITE_URL,
       siteName: site.name,
-      title: `${site.name} | ${site.tagline}`,
-      description: site.seo.description,
+      title: site.seo.socialTitle,
+      description: site.seo.shortDescription,
       images: [
         {
-          url: "/images/og.png",
+          url: "/images/og.jpg",
           width: 1200,
           height: 630,
           alt: `${site.name} — ${site.tagline}`,
-          type: "image/png",
+          type: "image/jpeg",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${site.shortName} | Shotokan Karate Sheikhupura`,
+      title: site.seo.socialTitle,
       description: site.seo.shortDescription,
       images: [
         {
-          url: "/images/og.png",
+          url: "/images/og.jpg",
           width: 1200,
           height: 630,
           alt: `${site.name} — ${site.tagline}`,
@@ -108,7 +108,7 @@ export function buildJsonLd() {
     url,
     email: site.email,
     telephone: phone,
-    image: [`${url}/images/og.png`, `${url}/images/logo.png`],
+    image: [`${url}/images/og.jpg`, `${url}/images/logo.png`],
     logo: {
       "@type": "ImageObject",
       url: `${url}/images/logo.png`,
