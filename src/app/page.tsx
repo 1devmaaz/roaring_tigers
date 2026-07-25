@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/sections/hero";
@@ -10,12 +11,23 @@ import { Pricing } from "@/components/sections/pricing";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Faq } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
+import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: `${site.name} | Shotokan Karate in ${site.location}`,
+  },
+  description: site.seo.description,
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main">
         <Hero />
         <About />
         <Programs />

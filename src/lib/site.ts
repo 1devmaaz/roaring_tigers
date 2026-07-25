@@ -7,6 +7,12 @@ export const site = {
   phones: ["0315-4241680", "0343-4010016", "0301-4570915"],
   email: "waqasdogar545@gmail.com",
   address: {
+    street: "Bank Plaza, Near White Castle, Basement of MCB Bank, Ghang Road",
+    city: "Sheikhupura",
+    region: "Punjab",
+    postalCode: "",
+    country: "PK",
+    countryName: "Pakistan",
     lines: [
       "Bank Plaza",
       "Near White Castle",
@@ -19,12 +25,59 @@ export const site = {
   schedule: {
     days: "Monday – Saturday",
     time: "2:00 PM – 8:00 PM",
+    /** Opening hours for schema.org (Mon–Sat) */
+    opens: "14:00",
+    closes: "20:00",
   },
   pricing: {
     registration: "PKR 5,000",
     monthly: "PKR 5,000",
   },
+  seo: {
+    description:
+      "Traditional Shotokan Karate academy in Sheikhupura, Punjab, Pakistan. Professional karate classes for kids, teens, adults and women — discipline, confidence, self-defense and fitness.",
+    shortDescription:
+      "Shotokan Karate classes in Sheikhupura for kids, teens, adults and women. Discipline, confidence and self-defense.",
+    keywords: [
+      "Shotokan Karate Sheikhupura",
+      "Karate Club Sheikhupura",
+      "Karate Punjab Pakistan",
+      "Roaring Tigers Karate",
+      "Kids Karate Sheikhupura",
+      "Self Defense Classes Sheikhupura",
+      "Women Self Defense Pakistan",
+      "Martial Arts Sheikhupura",
+      "Shotokan Dojo",
+      "Karate Classes Near Me",
+      "Belt Grading Karate",
+      "Kumite Training",
+      "Kata Training",
+    ],
+    locale: "en_PK",
+    language: "en",
+  },
 } as const;
+
+/** Canonical site origin. Set NEXT_PUBLIC_SITE_URL in production. */
+export function getSiteUrl(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  if (fromEnv) return fromEnv;
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return "http://localhost:3000";
+}
+
+/** Convert local PK mobile (03xx-xxxxxxx) to E.164 (+92…). */
+export function toE164(phone: string): string {
+  const digits = phone.replace(/\D/g, "");
+  if (digits.startsWith("92")) return `+${digits}`;
+  if (digits.startsWith("0")) return `+92${digits.slice(1)}`;
+  return `+${digits}`;
+}
 
 export const nav = [
   { label: "Home", href: "#home" },

@@ -76,6 +76,24 @@ lives in [`src/lib/site.ts`](src/lib/site.ts) so copy can be updated in one plac
 | Border      | Gray         | `#3A3A3A` |
 | Achievements| Gold         | `#D4AF37` |
 
+## SEO
+
+Configured out of the box:
+
+- Full metadata (title template, description, keywords, canonical, robots)
+- Open Graph + Twitter large cards (`/opengraph-image`, `/twitter-image`)
+- App icons + web manifest
+- `robots.txt` + `sitemap.xml`
+- JSON-LD for LocalBusiness / SportsClub, FAQPage, WebSite, BreadcrumbList
+- Geo meta tags for Sheikhupura
+
+Set your production domain before deploy:
+
+```bash
+cp .env.example .env.local
+# NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
 ## Notes
 
 - The contact form is wired for validation but has **no backend** — submissions
