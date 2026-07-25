@@ -42,10 +42,11 @@ export function buildMetadata(): Metadata {
       description: site.seo.description,
       images: [
         {
-          url: "/opengraph-image",
+          url: "/images/og.png",
           width: 1200,
           height: 630,
           alt: `${site.name} — ${site.tagline}`,
+          type: "image/png",
         },
       ],
     },
@@ -53,7 +54,14 @@ export function buildMetadata(): Metadata {
       card: "summary_large_image",
       title: `${site.shortName} | Shotokan Karate Sheikhupura`,
       description: site.seo.shortDescription,
-      images: ["/twitter-image"],
+      images: [
+        {
+          url: "/images/og.png",
+          width: 1200,
+          height: 630,
+          alt: `${site.name} — ${site.tagline}`,
+        },
+      ],
     },
     robots: {
       index: true,
@@ -68,8 +76,16 @@ export function buildMetadata(): Metadata {
       },
     },
     icons: {
-      icon: [{ url: "/icon", type: "image/png" }],
-      apple: [{ url: "/apple-icon", type: "image/png" }],
+      icon: [
+        { url: "/images/logo.png", type: "image/png", sizes: "1080x1080" },
+        { url: "/favicon.png", type: "image/png", sizes: "48x48" },
+        { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      ],
+      apple: [
+        { url: "/images/logo.png", type: "image/png", sizes: "1080x1080" },
+        { url: "/apple-icon.png", type: "image/png", sizes: "180x180" },
+      ],
+      shortcut: "/images/logo.png",
     },
     other: {
       "geo.region": "PK-PB",
@@ -95,7 +111,7 @@ export function buildJsonLd() {
     url,
     email: site.email,
     telephone: phone,
-    image: `${url}/images/logo.png`,
+    image: [`${url}/images/og.png`, `${url}/images/logo.png`],
     logo: {
       "@type": "ImageObject",
       url: `${url}/images/logo.png`,
