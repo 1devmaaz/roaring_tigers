@@ -14,8 +14,8 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ["sports", "education", "fitness"],
     icons: [
       {
-        src: "/images/logo.png",
-        sizes: "1080x1080",
+        src: "/icon-192.png",
+        sizes: "192x192",
         type: "image/png",
         purpose: "any",
       },
@@ -24,12 +24,6 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: "512x512",
         type: "image/png",
         purpose: "any",
-      },
-      {
-        src: "/apple-icon.png",
-        sizes: "180x180",
-        type: "image/png",
-        purpose: "maskable",
       },
     ],
   };

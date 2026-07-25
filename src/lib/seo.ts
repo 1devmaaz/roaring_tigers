@@ -77,15 +77,12 @@ export function buildMetadata(): Metadata {
     },
     icons: {
       icon: [
-        { url: "/images/logo.png", type: "image/png", sizes: "1080x1080" },
+        { url: "/favicon.ico", sizes: "48x48" },
         { url: "/favicon.png", type: "image/png", sizes: "48x48" },
         { url: "/icon.png", type: "image/png", sizes: "512x512" },
       ],
-      apple: [
-        { url: "/images/logo.png", type: "image/png", sizes: "1080x1080" },
-        { url: "/apple-icon.png", type: "image/png", sizes: "180x180" },
-      ],
-      shortcut: "/images/logo.png",
+      apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+      shortcut: "/favicon.ico",
     },
     other: {
       "geo.region": "PK-PB",
